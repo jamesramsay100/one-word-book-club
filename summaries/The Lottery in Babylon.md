@@ -4,10 +4,10 @@
 The Lottery in Babylon
 
 ## Long summary
-The Babylonians had a lottery. It was a huge success. It became so successful that it was forced to add more "unlucky" numbers. This was considered a logical and symmetrical solution.   The Lottery is a game of chance. The Company is an organization that controls the Lottery. The Company is a secret organization. The Company is a secret organization that controls the Lottery. The Company is a secret organization that controls the Lottery and is a secret organization. The Company is a secret organization that controls    The Company is the reason for everything, but it doesn't exist.
+The lottery is a metaphor for life, and the lottery in Babylon is a metaphor for the lottery in Babylon.  																																																															  The lottery is a game of chance that determines the fate of the people.  The Lottery is a game of chance, but it is also a game of skill. The Lottery is a game of chance, but it is also a game of skill.  the lottery is a metaphor for the universe.   The Company is a secret organization that controls the world.
 
 ## Short summary
-The Company is a secret organization that controls the Lottery and is a secret organization.
+The Lottery is a game of chance, but it is also a game of skill.
 
 ## One word summary
 

@@ -4,10 +4,10 @@
 The Circular Ruins
 
 ## Long summary
-The man is a leper, and he’s looking for a place to die. He finds a temple to a dead god, and he sleeps there. He’s awakened by a bird, and he finds that the people of the area have left him some food and water. He’s afraid  A man dreams of a foreign land, and a foreign people. He dreams of a man who lectures on anatomy, cosmography, and magic. He dreams of a group of students who listen to the man's teachings. He dreams of a man who lectures on anatomy, cosmography, and magic. He dreams   A man dreams a man, and then he dreams the man's skeleton, and then he dreams the man's hair, and then he dreams the man's skin, and then he dreams the man's organs, and then he dreams the man's heart, and then he dreams the man's eyes, and then he dreams   I'm not sure what this story is about. It's hard to tell what the point of it is. It's hard to tell what the point of it is. The story is about a man who is the creation of another man's dream. The story is about a man who is the creation of another man's
+The man is a teacher in a dream, and he teaches his students about anatomy, cosmography, and magic. He is looking for a soul worthy of taking its place in the universe.   The sorcerer's apprentice is a story about a guy who makes a magic golem and then can't control it.  A man creates a son out of stone. He teaches him everything he knows, but then he has to send him away to another temple. The son doesn't know he's a statue. The man is sad.  The Sorcerer's Apprentice is a story about a man who creates a son, but the son is a phantasm, a projection of the man's own mind, and the man realizes this and is terrified.
 
 ## Short summary
-I'm not sure what this story is about. It's hard to tell what the point of it is. It's hard to tell what the point of it is. The story is about a man who is the creation of another man's dream. The story is about a man who is the creation of another man's
+The Sorcerer's Apprentice is a story about a man who creates a son, but the son is a phantasm, a projection of the man's own mind, and the man realizes this and is terrified.
 
 ## One word summary
 
