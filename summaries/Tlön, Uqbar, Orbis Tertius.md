@@ -4,10 +4,10 @@
 Tlön, Uqbar, Orbis Tertius
 
 ## Long summary
-Bioy Casares, the author of the novel "The Book of Sand," is a man who, in his spare time, researches the history of the world. He is also a man who, in his spare time, writes a novel.   I found a book by a German theologian that I had never heard of, and it was about a country I had never heard of.     Tlön is a language of the southern hemisphere.        The Tlön-Uqbarah of Gunnar Erfjord is a story of a secret society that invented a country. The society's name was Tlön, and the country was called Uqbarah. The society's members were called Tlön-Uqbarah. The society       The novel is about a law student who becomes a vigilante, and who is eventually killed.    The author of this novel is a genius.
+A mirror is a mirror, and a mirror is a mirror.       tlön is a language of the south hemisphere, and the north hemisphere is a language of the north hemisphere.     I'm not a big fan of the book, but I think it's a good introduction to the subject. I will say, though, that I think it's a little too short. I would have liked to have seen more of the history of the philosophy of science, and I think the book would have been better         I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician. I'm a mathematician      Bahadur is a  foolish  man, but his  foolishness  is  a  foolishness  that  is  a  foolishness  that  is  a  foolishness   The book is a good read, but it's a bit too long for my tastes.
 
 ## Short summary
 
 
 ## One word summary
-"The Book of Sand" is a novel about
+I think it's a great book. It's
