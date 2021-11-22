@@ -10,4 +10,4 @@ The lottery is a metaphor for life, and the lottery in Babylon is a metaphor for
 The Lottery is a game of chance, but it is also a game of skill.
 
 ## One word summary
-
+Existence

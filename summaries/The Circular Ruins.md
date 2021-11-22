@@ -10,4 +10,4 @@ The man is a teacher in a dream, and he teaches his students about anatomy, cosm
 The Sorcerer's Apprentice is a story about a man who creates a son, but the son is a phantasm, a projection of the man's own mind, and the man realizes this and is terrified.
 
 ## One word summary
-
+Terror

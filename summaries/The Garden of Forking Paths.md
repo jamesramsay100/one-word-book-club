@@ -10,4 +10,4 @@ The History of the World War, by Liddell Hart, is a book that is not to be misse
 I'm a fucking genius.
 
 ## One word summary
-
+Nonsense

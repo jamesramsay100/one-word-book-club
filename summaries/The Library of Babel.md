@@ -10,4 +10,4 @@ The universe is a library.  The library is infinite, and the librarian is a sad,
 The Library of Babel is a place where all possible books are stored. It is also a place where all possible books are stored.
 
 ## One word summary
-
+Despair
