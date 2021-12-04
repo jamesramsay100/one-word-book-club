@@ -2,3 +2,4 @@ openai
 jupyterlab
 ipykernel
 ipywidgets
+pdfplumber
