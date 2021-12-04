@@ -1,4 +1,4 @@
 # one-word-book-club
-OpenAI NLP summary of book club books
+Generates one-word summaries of books.
 
-Summaries found in folder 'summaries'
+Summaries found in folder `summaries`
