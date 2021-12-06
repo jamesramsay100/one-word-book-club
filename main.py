@@ -8,7 +8,7 @@ if __name__ == '__main__':
     )
     bk.load_pdf("pdf/Winnie-The-Pooh.pdf")
     bk.generate_summary(
-        engine="ada",
+        engine="curie",
         save=True
     )
     print("Done loading book")
