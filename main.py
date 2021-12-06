@@ -1,11 +1,13 @@
+"""Generate summary from PDF"""
 from book import Book
 
 if __name__ == '__main__':
     bk = Book(
-        "Fictions",
-        "Borges",
-        "pdf/borges_collected-fictions.pdf"
+        "Winnie the Pooh",
+        "AA Milne",
+        "pdf/Winnie-The-Pooh-1-78.pdf"
     )
 
-    print("Done loading book")
+    bk.generate_summary()
 
+    print("Done loading book")
