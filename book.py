@@ -2,29 +2,30 @@
 import re
 import os
 from typing import OrderedDict
+from datetime import datetime
 import pdfplumber
 import openai
 from tqdm import tqdm
-from collections import OrderedDict
+
 
 class Book():
     """
     Class stores text and provides methods to manipulate it and generate summaries
     """
 
-    def __init__(self, title, author, pdf_file):
+    def __init__(self, title: str, author: str = "", text: str = ""):
         self.title = title
         self.author = author
-        self.pdf_file = pdf_file
-        self.raw_text = self.load_text()
-        self.text = self.clean_text()
+        self.text = text
+        # self.raw_text = self.load_text()
+        # self.text = self.clean_text()
         self.summaries = {}
 
-    def load_text(self):
+    def load_pdf(self, pdf_file: str, clean: bool = True):
         """Load text from pdf file"""
 
         print("Opening PDF file...")
-        with pdfplumber.open(self.pdf_file) as pdf:
+        with pdfplumber.open(pdf_file) as pdf:
 
             pdf_text = ""
 
@@ -34,21 +35,25 @@ class Book():
                 if page_text:
                     pdf_text += page_text
 
-            return pdf_text
+            if clean:
+                self.text = self.clean_text(pdf_text)
+            else:
+                self.text = pdf_text
 
-    def clean_text(self) -> str:
+    @staticmethod
+    def clean_text(unformatted_text) -> str:
         """
         Clean up text
         """
 
-        print("Cleaining text...")
+        print("Cleaning text...")
 
-        if self.raw_text is None:
+        if unformatted_text is None:
             return ""
 
         else:
             # remove unicode
-            clean_text = self.raw_text.encode('ascii', 'ignore').decode('ascii')
+            clean_text = unformatted_text.encode('ascii', 'ignore').decode('ascii')
 
             # remove repeated whitespace
             clean_text = re.sub(' +', ' ', clean_text)
@@ -108,6 +113,7 @@ class Book():
         min_summary_length:int = 10,
         chunk_length:int = 1000,
         engine:str="ada",
+        save:bool=True,
     ):
         """
         Generate a summary for the book
@@ -128,7 +134,7 @@ class Book():
         cntnue = self.ask_yesno(
             f"\n\nSummary cost using engine {engine}: $US {summary_cost}. Continue? [y/n]"
         )
-        if cntnue==False:
+        if cntnue is False:
             print("\n\nExiting...")
             exit(0)
 
@@ -159,10 +165,10 @@ class Book():
 
         print("Done...!")
 
-        self.saveDictAsMarkdown(
-            self.summaries,
-            "delme.mD"
-        )
+        if save:
+            self.save_dict_as_markdown(
+                self.summaries,
+            )
 
     @staticmethod
     def get_min_dict_key(dictionary):
@@ -206,14 +212,16 @@ class Book():
             else:
                 print("Please respond by yes or no.")
 
-    @staticmethod
-    def saveDictAsMarkdown(dictionary, filename):
+    def save_dict_as_markdown(self, dictionary, filename=None):
         """
         Save dictionary as markdown file
         """
+        now = datetime.now().strftime(format="%Y%m%d_%H%M%S")
+        filename = filename or f"summaries/{self.title}_Summary_{now}.mD"
         # sort dictionary by key ascending
         sorted_dict = OrderedDict(sorted(dictionary.items()))
 
         with open(filename, 'w') as file:
+            file.write(f"# Summary of {self.title}\n\n")
             for key, value in sorted_dict.items():
-                file.write(f"#{key} word summary\n {value}\n\n")
+                file.write(f"## {key} word summary\n {value}\n\n")

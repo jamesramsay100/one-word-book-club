@@ -3,11 +3,12 @@ from book import Book
 
 if __name__ == '__main__':
     bk = Book(
-        "Winnie the Pooh",
-        "AA Milne",
-        "pdf/Winnie-The-Pooh-1-78.pdf"
+        title="Winnie the Pooh",
+        author="AA Milne",
     )
-
-    bk.generate_summary()
-
+    bk.load_pdf("pdf/Winnie-The-Pooh.pdf")
+    bk.generate_summary(
+        engine="ada",
+        save=True
+    )
     print("Done loading book")
