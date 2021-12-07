@@ -254,7 +254,7 @@ class Book():
             else:
                 print("Please respond by yes or no.")
 
-    def save_dict_as_markdown(self, dictionary, filename=None):
+    def save_dict_as_markdown(self, dictionary, filename=None, max_summary_legnth=250):
         """
         Save dictionary as markdown file
         """
@@ -266,4 +266,5 @@ class Book():
         with open(filename, 'w') as file:
             file.write(f"# Summary of {self.title}\n\n")
             for key, value in sorted_dict.items():
-                file.write(f"## {key} word summary\n {value}\n\n")
+                if key <= max_summary_legnth:  # only save summaries of length <= 250 words
+                    file.write(f"## {key} word summary\n {value}\n\n")
