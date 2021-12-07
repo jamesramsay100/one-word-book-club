@@ -254,7 +254,7 @@ class Book():
             else:
                 print("Please respond by yes or no.")
 
-    def save_dict_as_markdown(self, dictionary, filename=None, max_summary_legnth=250):
+    def save_dict_as_markdown(self, dictionary, filename=None, max_summary_legnth=1000):
         """
         Save dictionary as markdown file
         """
