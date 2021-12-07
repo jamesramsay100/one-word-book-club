@@ -17,8 +17,6 @@ class Book():
         self.title = title
         self.author = author
         self.text = text
-        # self.raw_text = self.load_text()
-        # self.text = self.clean_text()
         self.summaries = {}
 
     def load_pdf(self, pdf_file: str, clean: bool = True):
@@ -107,10 +105,31 @@ class Book():
         )
         return response.choices[0].text
 
+    @staticmethod
+    def one_word_summary(
+        input_text:str,
+        engine:str="ada",
+    ):
+        """
+        Makes a summarisation text prediction
+        """
+        openai.api_key = os.getenv("OPENAI_API_KEY")
+        response = openai.Completion.create(
+            engine=engine,
+            prompt=input_text+"\n\nTo summarise in one word:",
+            temperature=0.75,
+            max_tokens=3,
+            top_p=1,
+            frequency_penalty=0.95,
+            presence_penalty=1.98,
+            # stop=["\n"]
+        )
+        return response.choices[0].text
+
     def generate_summary(
         self,
         compression_ratio:float = 0.25,
-        min_summary_length:int = 10,
+        min_summary_length:int = 80,
         chunk_length:int = 1000,
         engine:str="ada",
         save:bool=True,
@@ -131,6 +150,7 @@ class Book():
             compression_ratio,
             engine=engine
         )
+        summary_cost = round(summary_cost, 3)
         cntnue = self.ask_yesno(
             f"\n\nSummary cost using engine {engine}: $US {summary_cost}. Continue? [y/n]"
         )
@@ -149,12 +169,16 @@ class Book():
 
             # append summary of each chunk
             _all_summaries = ""
+            max_tokens = max(
+                int(min(chunk_length, word_count)*compression_ratio),
+                min_summary_length
+            )
             for chunk in tqdm(text_chunks):
                 _chunk_summary = self.tldr_summary(
                     input_text=chunk,
                     engine=engine,
                     summary_prompt="\n\nIn summary:",
-                    max_tokens=int(min(chunk_length, word_count)*compression_ratio),
+                    max_tokens=max_tokens,
                     temperature=0.1
                 )
                 _all_summaries += _chunk_summary
@@ -163,7 +187,25 @@ class Book():
             self.summaries[word_count] = _all_summaries
             print(f"Generated summary of length {word_count}...")
 
-        print("Done...!")
+        accept_one_word = False
+        while accept_one_word is False:
+            # generate one word summary
+            one_word_input_length = min(
+                {k: v for k, v in self.summaries.items() if k > 250}
+            )  # chose a summary of length 250-1000 words
+            one_word_input_text = self.summaries.get(one_word_input_length)
+            one_word_summary = self.one_word_summary(
+                input_text=one_word_input_text,
+                engine=engine
+            )
+            cost = round(one_word_input_length*0.006/1000, 4)
+            accept_one_word = self.ask_yesno(
+                f"\n\nAccept '{one_word_summary}' as one-word summary (new estimate costs $US {cost})? [y/n]"
+            )
+
+        self.summaries[1] = one_word_summary
+
+        print("Finished generating summaries...!")
 
         if save:
             self.save_dict_as_markdown(
