@@ -11,4 +11,3 @@ if __name__ == '__main__':
         engine="curie",
         save=True
     )
-    print("Done loading book")
